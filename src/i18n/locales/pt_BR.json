@@ -248,29 +248,29 @@
     "exportWarning": "O arquivo exportado conterá suas senhas de banco de dados e SSH em texto simples. Armazene-o com segurança."
   },
   "connectionAppearance": {
-    "section": "Appearance",
-    "accentColor": "Accent color",
-    "customColor": "Custom",
-    "resetColor": "Reset to driver default",
-    "resetIcon": "Reset to driver default",
-    "icon": "Icon",
+    "section": "Aparência",
+    "accentColor": "Cor de destaque",
+    "customColor": "Customizada",
+    "resetColor": "Voltar para cor padrão",
+    "resetIcon": "Voltar para o ícone padrão",
+    "icon": "Icone",
     "tabs": {
-      "default": "Default",
-      "pack": "Icon",
-      "emoji": "Emoji",
-      "image": "Image"
+      "default": "Padrão",
+      "pack": "Icones",
+      "emoji": "Emojis",
+      "image": "Imagem"
     },
-    "previewLabel": "Preview",
-    "defaultHint": "Using the driver's default icon.",
-    "emojiSelected": "Selected emoji",
-    "emojiHint": "Click another emoji below to change.",
-    "removeEmoji": "Clear",
-    "chooseImage": "Choose image…",
-    "removeImage": "Remove",
-    "imageHint": "PNG, JPG, WebP or SVG · max 512 KB",
+    "previewLabel": "Pré-visualização",
+    "defaultHint": "Usando o ícone padrão do driver.",
+    "emojiSelected": "Selecionar emoji",
+    "emojiHint": "Clique em um emoji abaixo para alterá-lo.",
+    "removeEmoji": "Limpar",
+    "chooseImage": "Escolher imagem…",
+    "removeImage": "Remover",
+    "imageHint": "PNG, JPG, WebP ou SVG · max. 512 KB",
     "errors": {
-      "invalidEmoji": "Please enter exactly one emoji",
-      "invalidHex": "Please enter a valid hex color like #1a2b3c"
+      "invalidEmoji": "Por favor, digite exatamente um emoji",
+      "invalidHex": "Por favor, digite uma cor hexadecimal válida, por exemplo, #1a2b3c"
     }
   },
   "settings": {
