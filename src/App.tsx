@@ -7,6 +7,7 @@ import { KeybindingsProvider } from "./contexts/KeybindingsProvider";
 import { PluginSlotProvider } from "./contexts/PluginSlotProvider";
 import { PluginModalProvider } from "./contexts/PluginModalProvider";
 import { AlertProvider } from "./contexts/AlertProvider";
+import { ToastProvider } from "./contexts/ToastProvider";
 import { Connections } from "./pages/Connections";
 import { Editor } from "./pages/Editor";
 import { McpPage } from "./pages/McpPage";
@@ -104,6 +105,7 @@ export function App() {
 
   return (
     <>
+      <ToastProvider>
       <AlertProvider>
         <BrowserRouter>
           <ConnectionHealthMonitor />
@@ -143,6 +145,7 @@ export function App() {
           </KeybindingsProvider>
         </BrowserRouter>
       </AlertProvider>
+      </ToastProvider>
 
       <UpdateNotificationModal
         isOpen={!!updateInfo}

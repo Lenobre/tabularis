@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import type { TFunction } from "i18next";
+import { useAlert } from "../../hooks/useAlert";
+import { useToast } from "../../hooks/useToast";
 
 interface ErrorDisplayProps {
   error: string;
@@ -10,14 +12,23 @@ interface ErrorDisplayProps {
 export function ErrorDisplay({ error, t }: ErrorDisplayProps) {
   const [showDetails, setShowDetails] = useState(false);
 
+  const { showToast } = useToast();
+
   const separatorIndex = error.indexOf("\n\n");
   const hasDetails = separatorIndex !== -1 && separatorIndex < error.length - 2;
   const brief = hasDetails ? error.slice(0, separatorIndex) : error;
   const details = hasDetails ? error.slice(separatorIndex + 2) : "";
 
+  async function handleErrorClick(e: React.MouseEvent<HTMLDivElement>) {
+    e.stopPropagation();
+
+    await navigator.clipboard.writeText(error);
+    showToast({ title: t("editor.copied"), message: t("editor.errorCopied"), kind: "success" });
+  }
+
   return (
-    <div className="p-4 text-red-400 font-mono text-sm bg-red-900/10 h-full overflow-auto">
-      <div className="whitespace-pre-wrap select-text">Error: {brief}</div>
+    <div className="p-4 text-red-400 font-mono text-sm bg-red-900/10 h-full overflow-auto select-text" onClick={handleErrorClick} title="Click to copy error details">
+      <div className="whitespace-pre-wrap">Error: {brief}</div>
       {hasDetails && (
         <>
           <button
