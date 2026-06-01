@@ -17,7 +17,7 @@ export function ErrorDisplay({ error, t }: ErrorDisplayProps) {
 
   return (
     <div className="p-4 text-red-400 font-mono text-sm bg-red-900/10 h-full overflow-auto">
-      <div className="whitespace-pre-wrap">Error: {brief}</div>
+      <div className="whitespace-pre-wrap select-text">Error: {brief}</div>
       {hasDetails && (
         <>
           <button
